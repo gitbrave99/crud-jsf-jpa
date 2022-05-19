@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value=""></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+
+            <div class="row">
+                <div class="col">
+                    <div class="card p-4">
+                        <h:form>
+
+                            <div class="display-inline"> 
+                                <h:outputText style="font-size: 25px; font-style: italic" value="#{bundle.ViewPastelLabel_nombre}"/>  &nbsp;&nbsp;
+                                <h:outputText style="font-size: 20px;" value="#{pastelController.selected.nombre}" title="#{bundle.ViewPastelTitle_nombre}"/>
+                            </div>
+
+                            <div class="display-inline">
+                                <h:outputText style="font-size: 25px; font-style: italic" value="#{bundle.ViewPastelLabel_existencia}"/>&nbsp;&nbsp;
+                                <h:outputText style="font-size: 20px;" value="#{pastelController.selected.existencia}" title="#{bundle.ViewPastelTitle_existencia}"/>
+                            </div>
+
+
+
+                            <br />
+                            <h:commandLink class="btn btn-danger" action="#{pastelController.destroyAndView}">
+                                <i class="bi bi-trash-fill"></i>
+                            </h:commandLink>
+                            <h:link class="btn btn-warning" outcome="Edit">
+                                <i class="bi bi-pencil"></i>
+                            </h:link>
+                            <h:commandLink class="btn btn-primary" action="#{pastelController.prepareList}" >
+                                <i class="bi bi-list-ol"></i>
+                            </h:commandLink>
+                            <h:link class="btn btn-secondary" outcome="/index">
+                                <i class="bi bi-arrow-return-left"></i>
+                            </h:link>
+
+                        </h:form>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </ui:define>
+    </ui:composition>
+
+</html>

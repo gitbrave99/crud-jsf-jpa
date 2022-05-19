@@ -1,0 +1,9 @@
+controlador\PastelController$PastelControllerConverter.class
+modelo\Pastel.class
+com\mycompany\lastcrudjsfprime\JAXRSConfiguration.class
+controlador\PastelController.class
+controlador\util\JsfUtil.class
+com\mycompany\lastcrudjsfprime\resources\JavaEE8Resource.class
+controlador\PastelFacade.class
+controlador\AbstractFacade.class
+controlador\util\JsfUtil$PersistAction.class
