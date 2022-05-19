@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value=""></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h:panelGroup id="messagePanel" layout="block">
+                        <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                    </h:panelGroup>
+                    <div class="card ">
+                        <div class="card-header">
+                            <h5 class="card-title">Agregar Pastel</h5>
+                        </div>
+                        <div class="card-body">
+
+                            <h:form>
+
+<!--                                <div class="form-group">
+                                    <h:outputLabel value="#{bundle.CreatePastelLabel_idPastel}" for="idPastel" />
+                                    <h:inputText class="form-control" id="idPastel" value="#{pastelController.selected.idPastel}" title="#{bundle.CreatePastelTitle_idPastel}" required="true" requiredMessage="#{bundle.CreatePastelRequiredMessage_idPastel}"/>
+                                </div>-->
+
+                                <div class="form-group">
+                                    <h:outputLabel value="#{bundle.CreatePastelLabel_nombre}" for="nombre" />
+                                    <h:inputText  class="form-control" id="nombre" value="#{pastelController.selected.nombre}" title="#{bundle.CreatePastelTitle_nombre}" />
+                                </div>
+
+                                <div class="form-group">
+                                    <h:outputLabel value="#{bundle.CreatePastelLabel_existencia}" for="existencia" />
+                                    <h:inputText class="form-control" id="existencia" value="#{pastelController.selected.existencia}" title="#{bundle.CreatePastelTitle_existencia}" />
+                                </div>
+                                <br />
+
+                                <h:commandLink class="btn btn-primary" action="#{pastelController.create}" value="Agrear" />
+
+                                <h:commandLink class="btn btn-danger" action="#{pastelController.prepareList}" value="Cancelar" immediate="true"/>
+
+                            </h:form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </ui:define>
+    </ui:composition>
+
+</html>
